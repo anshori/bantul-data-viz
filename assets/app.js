@@ -208,7 +208,7 @@ async function loaddata() {
         breakpoint: 480,
         options: {
           chart: {
-            width: 200
+            width: 400
           },
         }
       }],
