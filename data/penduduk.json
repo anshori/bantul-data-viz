@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Jumlah Penduduk",
+    "colors": ["#a6cee3", "#1f78b4", "#b2df8a", "#33a02c", "#fb9a99", "#e31a1c", "#fdbf6f", "#ff7f00", "#cab2d6", "#6a3d9a", "#ffff99", "#b15928", "#fdb462", "#b3de69", "#fccde5", "#d9d9d9", "#bc80bd"],
+    "categories": ["Bambanglipuro", "Banguntapan", "Bantul", "Dlingo", "Imogiri", "Jetis", "Kasihan", "Kretek", "Pajangan", "Pandak", "Piyungan", "Pleret", "Pundong", "Sanden", "Sedayu", "Sewon", "Srandakan"],
+    "data": [38656, 145956, 63678, 36966, 59065, 55478, 129233, 30608, 36297, 49600, 56272, 47626, 32654, 30340, 47649, 117200, 29414]
+  },
+  {
+    "title": "Penduduk Laki-laki",
+    "colors": ["#a6cee3", "#1f78b4", "#b2df8a", "#33a02c", "#fb9a99", "#e31a1c", "#fdbf6f", "#ff7f00", "#cab2d6", "#6a3d9a", "#ffff99", "#b15928", "#fdb462", "#b3de69", "#fccde5", "#d9d9d9", "#bc80bd"],
+    "categories": ["Bambanglipuro", "Banguntapan", "Bantul", "Dlingo", "Imogiri", "Jetis", "Kasihan", "Kretek", "Pajangan", "Pandak", "Piyungan", "Pleret", "Pundong", "Sanden", "Sedayu", "Sewon", "Srandakan"],
+    "data": [19617, 72898, 32194, 18782, 29910, 28144, 65127, 15895, 18399, 24896, 28532, 23907, 16723, 15463, 24159, 58357, 14853]
+  },
+  {
+    "title": "Penduduk Perempuan",
+    "colors": ["#a6cee3", "#1f78b4", "#b2df8a", "#33a02c", "#fb9a99", "#e31a1c", "#fdbf6f", "#ff7f00", "#cab2d6", "#6a3d9a", "#ffff99", "#b15928", "#fdb462", "#b3de69", "#fccde5", "#d9d9d9", "#bc80bd"],
+    "categories": ["Bambanglipuro", "Banguntapan", "Bantul", "Dlingo", "Imogiri", "Jetis", "Kasihan", "Kretek", "Pajangan", "Pandak", "Piyungan", "Pleret", "Pundong", "Sanden", "Sedayu", "Sewon", "Srandakan"],
+    "data": [19039, 73058, 31484, 18184, 29155, 27334, 64106, 14713, 17898, 24704, 27740, 23719, 15931, 14877, 23490, 58843, 14561]
+  },
+  {
+    "title": "Jenis Kendaraan Bermotor",
+    "colors": ["#377eb8", "#984ea3", "#e41a1c", "#4daf4a"],
+    "categories": ["Mobil", "Bis", "Truk", "Sepeda Motor"],
+    "data": [26641, 41299, 4411, 383938]
+  }
+]
