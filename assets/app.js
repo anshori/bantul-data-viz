@@ -212,6 +212,9 @@ async function loaddata() {
       chart: {
         width: 600,
         type: 'donut',
+        toolbar: {
+          show: true,
+        }
       },
       labels: json[3].categories,
       responsive: [{
@@ -245,6 +248,59 @@ async function loaddata() {
       colors: json[3].colors,
       title: {
         text: json[3].title,
+        align: "center"
+      },
+      legend: {
+        position: 'top'
+      },
+    };
+
+    var chart = new ApexCharts(document.querySelector("#chart"), options);
+    chart.render();
+  } else if (datashow == 5) {
+    console.log(json[6].title);
+
+    var options = {
+      series: json[6].data,
+      chart: {
+        width: 600,
+        type: 'donut',
+        toolbar: {
+          show: true,
+        }
+      },
+      labels: json[6].categories,
+      responsive: [{
+        breakpoint: 480,
+        options: {
+          chart: {
+            width: 400
+          },
+        }
+      }],
+      plotOptions: {
+        pie: {
+          donut: {
+            labels: {
+              show: true,
+              value: {},
+              total: {
+                show: true,
+              }
+            }
+          }
+        }
+      },
+      dataLabels: {
+        enabled: true,
+        style: {
+          fontSize: '12px',
+          colors: ['#fff'],
+        },
+      },
+      colors: json[6].colors,
+      title: {
+        text: json[6].title,
         align: "center"
       },
       legend: {
