@@ -81,15 +81,19 @@ async function loaddata() {
       series: [{
         name: json[1].title,
         data: json[1].data
-      }],
+      },
+      {
+        name: json[2].title,
+        data: json[2].data
+      },
+      ],
       chart: {
         type: 'bar',
-        height: 700
+        height: 1400
       },
       plotOptions: {
         bar: {
           borderRadius: 4,
-          distributed: true,
           horizontal: true,
           dataLabels: {
             position: 'top',
@@ -107,7 +111,7 @@ async function loaddata() {
           },
         },
       },
-      colors: json[1].colors,
+      colors: ["#548CFF", "#D96098"],
       tooltip: {
         y: {
           formatter: function (val) {
@@ -116,7 +120,7 @@ async function loaddata() {
         }
       },
       title: {
-        text: json[1].title,
+        text: "Jumlah Penduduk Menurut Jenis Kelamin",
         align: "center"
       },
       dataLabels: {
@@ -135,21 +139,27 @@ async function loaddata() {
     var chart = new ApexCharts(document.querySelector("#chart"), options);
     chart.render();
   } else if (datashow == 3) {
-    console.log(json[2].title);
+    console.log(json[4].title);
 
     var options = {
       series: [{
-        name: json[2].title,
-        data: json[2].data
-      }],
+        name: json[4].title,
+        data: json[4].data
+      },
+      {
+        name: json[5].title,
+        data: json[5].data
+      },
+      ],
       chart: {
         type: 'bar',
-        height: 700
+        height: 700,
+        stacked: true,
+        stackType: '100%'
       },
       plotOptions: {
         bar: {
           borderRadius: 4,
-          distributed: true,
           horizontal: true,
           dataLabels: {
             position: 'top',
@@ -157,17 +167,17 @@ async function loaddata() {
         }
       },
       xaxis: {
-        categories: json[2].categories,
+        categories: json[4].categories,
       },
       yaxis: {
         title: {
-          text: 'Kecamatan',
+          text: 'Kelompok Umur',
           style: {
             fontSize: '14px',
           },
         },
       },
-      colors: json[2].colors,
+      colors: ["#548CFF", "#D96098"],
       tooltip: {
         y: {
           formatter: function (val) {
@@ -176,7 +186,7 @@ async function loaddata() {
         }
       },
       title: {
-        text: json[2].title,
+        text: "Jumlah Penduduk Menurut Kelompok Umur",
         align: "center"
       },
       dataLabels: {
