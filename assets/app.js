@@ -1,28 +1,33 @@
 async function loaddata() {
   $('#chart').remove();
 
+  // remove option value="" from select id datashow
+  $('#datashow option[value=""]').remove();
+
   var chartcontent = document.getElementById('chart-content');
-  
-  // create button loading bootstrap to chart
-  var loading = document.createElement('button');
-  loading.id = 'loading';
-  loading.className = 'btn btn-primary';
-  loading.setAttribute('type', 'button');
-  loading.setAttribute('disabled', 'disabled');
-  var span1 = document.createElement('span');
-  span1.className = 'spinner-border spinner-border-sm';
-  span1.setAttribute('aria-hidden', 'true');
-  loading.appendChild(span1);
-  var span2 = document.createElement('span');
-  span2.setAttribute('role', 'status');
-  span2.id = 'status';
-  span2.innerHTML = ' Loading...';
-  loading.appendChild(span2);
-  chartcontent.appendChild(loading);
 
   var datashow = document.getElementById('datashow').value;
   var data = await fetch('data/penduduk.json');
   var json = await data.json();
+  
+  if (datashow !== "") {
+    // create button loading bootstrap to chart
+    var loading = document.createElement('button');
+    loading.id = 'loading';
+    loading.className = 'btn btn-primary';
+    loading.setAttribute('type', 'button');
+    loading.setAttribute('disabled', 'disabled');
+    var span1 = document.createElement('span');
+    span1.className = 'spinner-border spinner-border-sm';
+    span1.setAttribute('aria-hidden', 'true');
+    loading.appendChild(span1);
+    var span2 = document.createElement('span');
+    span2.setAttribute('role', 'status');
+    span2.id = 'status';
+    span2.innerHTML = ' Loading...';
+    loading.appendChild(span2);
+    chartcontent.appendChild(loading); 
+  }
 
   // create div chart
   var chart = document.createElement('div');
