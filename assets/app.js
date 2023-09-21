@@ -1,15 +1,30 @@
 async function loaddata() {
-  // $('#chart') remove
   $('#chart').remove();
 
+  var chartcontent = document.getElementById('chart-content');
+  
+  // create button loading bootstrap to chart
+  var loading = document.createElement('button');
+  loading.id = 'loading';
+  loading.className = 'btn btn-primary';
+  loading.setAttribute('type', 'button');
+  loading.setAttribute('disabled', 'disabled');
+  var span1 = document.createElement('span');
+  span1.className = 'spinner-border spinner-border-sm';
+  span1.setAttribute('aria-hidden', 'true');
+  loading.appendChild(span1);
+  var span2 = document.createElement('span');
+  span2.setAttribute('role', 'status');
+  span2.id = 'status';
+  span2.innerHTML = ' Loading...';
+  loading.appendChild(span2);
+  chartcontent.appendChild(loading);
+
   var datashow = document.getElementById('datashow').value;
-
   var data = await fetch('data/penduduk.json');
-
   var json = await data.json();
 
-  var chartcontent = document.getElementById('chart-content');
-
+  // create div chart
   var chart = document.createElement('div');
   chart.id = 'chart';
   chartcontent.appendChild(chart);
@@ -73,6 +88,7 @@ async function loaddata() {
     };
 
     var chart = new ApexCharts(document.querySelector("#chart"), options);
+    $('#loading').remove();
     chart.render();
   } else if (datashow == 2) {
     console.log(json[1].title);
@@ -137,6 +153,7 @@ async function loaddata() {
     };
 
     var chart = new ApexCharts(document.querySelector("#chart"), options);
+    $('#loading').remove();
     chart.render();
   } else if (datashow == 3) {
     console.log(json[4].title);
@@ -203,6 +220,7 @@ async function loaddata() {
     };
 
     var chart = new ApexCharts(document.querySelector("#chart"), options);
+    $('#loading').remove();
     chart.render();
   } else if (datashow == 4) {
     console.log(json[3].title);
@@ -256,6 +274,7 @@ async function loaddata() {
     };
 
     var chart = new ApexCharts(document.querySelector("#chart"), options);
+    $('#loading').remove();
     chart.render();
   } else if (datashow == 5) {
     console.log(json[6].title);
@@ -309,6 +328,7 @@ async function loaddata() {
     };
 
     var chart = new ApexCharts(document.querySelector("#chart"), options);
+    $('#loading').remove();
     chart.render();
   }
 }
