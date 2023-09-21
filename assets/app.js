@@ -330,5 +330,65 @@ async function loaddata() {
     var chart = new ApexCharts(document.querySelector("#chart"), options);
     $('#loading').remove();
     chart.render();
+  } else if (datashow == 6) {
+    console.log(json[7].title);
+
+    var options = {
+      series: [{
+        name: json[7].title,
+        data: json[7].data,
+      }],
+      chart: {
+        width: 700,
+        type: 'radar',
+        toolbar: {
+          show: true,
+        }
+      },
+      labels: json[7].categories,
+      responsive: [{
+        breakpoint: 480,
+        options: {
+          chart: {
+            width: 400
+          },
+        }
+      }],
+      plotOptions: {
+        pie: {
+          donut: {
+            labels: {
+              show: true,
+              value: {},
+              total: {
+                show: true,
+              }
+            }
+          }
+        }
+      },
+      dataLabels: {
+        enabled: true,
+        style: {
+          fontSize: '12px',
+          colors: ['#000'],
+        },
+      },
+      colors: json[7].colors,
+      title: {
+        text: json[7].title,
+        align: "center"
+      },
+      legend: {
+        position: 'top'
+      },
+      fill: {
+        opacity: 0.2
+      },
+    };
+
+    var chart = new ApexCharts(document.querySelector("#chart"), options);
+    $('#loading').remove();
+    chart.render();
   }
 }
